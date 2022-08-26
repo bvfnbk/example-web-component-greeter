@@ -27,6 +27,8 @@ class HelloMessage extends HTMLElement {
 
     if (this.hasAttribute('name')) {
       this._wrapper.innerText = this._getMessage(this.getAttribute('name'));
+    } else {
+      this._wrapper.innerText = this._getMessage('World')
     }
   }
 
