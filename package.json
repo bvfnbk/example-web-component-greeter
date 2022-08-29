@@ -19,5 +19,13 @@
   "bugs": {
     "url": "https://github.com/bvfnbk/example-web-component-greeter/issues"
   },
-  "homepage": "https://github.com/bvfnbk/example-web-component-greeter#readme"
+  "homepage": "https://github.com/bvfnbk/example-web-component-greeter#readme",
+  "devDependencies": {
+    "jasmine-core": "^4.3.0",
+    "karma": "^6.4.0",
+    "karma-chrome-launcher": "^3.1.1",
+    "karma-firefox-launcher": "^2.1.2",
+    "karma-jasmine": "^5.1.0",
+    "karma-safari-launcher": "^1.0.0"
+  }
 }
