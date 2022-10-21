@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "The example web component using vanilla JS.",
   "scripts": {
-    "karma" : "karma start",
+    "karma": "karma start",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -26,7 +26,6 @@
     "karma": "^6.4.0",
     "karma-chrome-launcher": "^3.1.1",
     "karma-firefox-launcher": "^2.1.2",
-    "karma-jasmine": "^5.1.0",
-    "karma-safari-launcher": "^1.0.0"
+    "karma-jasmine": "^5.1.0"
   }
 }
