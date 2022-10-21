@@ -15,37 +15,45 @@ class HelloMessage extends HTMLElement {
     return ['name'];
   }
 
+  /**
+   * Cf. https://html.spec.whatwg.org/multipage/custom-elements.html#custom-element-conformance
+   *
+   * - `super()` is the first statement
+   * - no `return` statement
+   * - no `document.write()` or `document.open()
+   * - &hellip;
+   *
+   * etc. this means that the shadow root _can_ be created (including eventual listeners).
+   */
   constructor() {
     super();
-    this._wrapper = null;
-  }
 
-  connectedCallback() {
+    // Attach shadow root:
     this.attachShadow({mode: 'open'});
+
+    // "Create" content
     this.shadowRoot.appendChild(template.content.cloneNode(true));
     this._wrapper = this.shadowRoot.getElementById('wrapper');
-
-    if (this.hasAttribute('name')) {
-      this._wrapper.innerText = this._getMessage(this.getAttribute('name'));
-    } else {
-      this._wrapper.innerText = this._getMessage('World')
-    }
   }
 
+  /**
+   * Called whenever an attribute is updated.
+   *
+   * **Note:**
+   *
+   * - will only be called if `attributeName` is in `HelloMessage.observedAttributes`
+   * - will eventually be called before the `HelloMessage.connectedCallback()`
+   * - not all fields may be defined if they are set up in `HelloMessage.connectedCallback()`
+   *
+   * @param attributeName The name of the attribute.
+   * @param _oldValue The previous value (`null` for the first time)
+   * @param newValue The new value.
+   */
   attributeChangedCallback(attributeName, _oldValue, newValue) {
     if (attributeName === 'name') {
-      this._updateMessage(newValue);
+      // this._wrapper is initialised in the constructor
+      this._wrapper.innerText = `Hello ${(newValue ? newValue : 'World')}!`;
     }
-  }
-
-  _updateMessage(value) {
-    if (this._wrapper) {
-      this._wrapper.innerText = this._getMessage(value ? value : 'World');
-    }
-  }
-
-  _getMessage(value) {
-    return `Hello ${value}!`;
   }
 }
 
