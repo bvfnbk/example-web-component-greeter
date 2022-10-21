@@ -24,7 +24,7 @@ describe('The <hello-message> element', () => {
   it('should change the message when the "name" attribute is added.', function () {
     const id = 'custom';
     const newName = 'Jasmine';
-    const oldMessage = 'Hello World!';
+    const oldMessage = 'Hello Friend!';
     const newMessage = 'Hello Jasmine!';
 
     const element = document.getElementById(id);
