@@ -3,8 +3,7 @@ module.exports = function (config) {
     basePath: '',
     frameworks: ['jasmine'],
     files: [
-      {pattern: 'src/public/index.html', watched: true},
-      {pattern: 'src/public/HelloMessage.js', watched: true},
+      {pattern: 'src/public/js/HelloMessage.js', watched: true},
       {pattern: 'src/test/**/*.spec.js', watched: true}
     ],
     exclude: [],

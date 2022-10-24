@@ -1,10 +1,12 @@
 describe('The <hello-message> element', () => {
-  beforeEach(async () => {
+  beforeEach(() => {
+    // Add elements to the DOM; the first w/o 'name', the second w/ 'name'
     document.body.insertAdjacentHTML('afterbegin', `<hello-message id="default"></hello-message>`);
     document.body.insertAdjacentHTML('afterbegin', `<hello-message id="custom" name="Friend"></hello-message>`);
   });
 
   afterEach(() => {
+    // Cleanup DOM
     document.body.removeChild(document.getElementById('default'));
     document.body.removeChild(document.getElementById('custom'));
   })
@@ -22,28 +24,26 @@ describe('The <hello-message> element', () => {
   });
 
   it('should change the message when the "name" attribute is added.', function () {
-    const id = 'custom';
-    const newName = 'Jasmine';
-    const oldMessage = 'Hello Friend!';
-    const newMessage = 'Hello Jasmine!';
+    const element = document.getElementById('custom');
 
-    const element = document.getElementById(id);
-
-    expect(element.shadowRoot.getElementById('wrapper').innerText).toBe(oldMessage);
-    element.setAttribute('name', newName);
-    expect(element.shadowRoot.getElementById('wrapper').innerText).toBe(newMessage);
+    expect(element.shadowRoot.getElementById('wrapper').innerText).toBe('Hello Friend!');
+    element.setAttribute('name', 'Jasmine');
+    expect(element.shadowRoot.getElementById('wrapper').innerText).toBe('Hello Jasmine!');
   });
 
   it('should change the message when the "name" attribute is updated.', function () {
-    const id = 'custom';
-    const newName = 'Jasmine';
-    const oldMessage = 'Hello Friend!';
-    const newMessage = 'Hello Jasmine!';
+    const element = document.getElementById('custom');
 
-    const element = document.getElementById(id);
+    expect(element.shadowRoot.getElementById('wrapper').innerText).toBe('Hello Friend!');
+    element.setAttribute('name', 'Jasmine');
+    expect(element.shadowRoot.getElementById('wrapper').innerText).toBe('Hello Jasmine!');
+  });
 
-    expect(element.shadowRoot.getElementById('wrapper').innerText).toBe(oldMessage);
-    element.setAttribute('name', newName);
-    expect(element.shadowRoot.getElementById('wrapper').innerText).toBe(newMessage);
+  it('should change the message back to the default when the "name" attribute is removed.', function () {
+    const element = document.getElementById('custom');
+
+    expect(element.shadowRoot.getElementById('wrapper').innerText).toBe('Hello Friend!');
+    element.removeAttribute('name');
+    expect(element.shadowRoot.getElementById('wrapper').innerText).toBe('Hello World!');
   });
 });
