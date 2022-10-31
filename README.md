@@ -7,6 +7,6 @@ _Angular_ and _VueJS_ to name but a few.
 ## Overview
 
 1. [`<hello-message>` Greeter](./hello-message/README.md) - the most simple web component.
-  - Basic setup.
-  - Lifecycle: `attributeChangedCallback`
-  - Tests with _Karma JS_ and _Jasmine_
+   - Basic setup.
+   - Lifecycle: `attributeChangedCallback`
+   - Tests with _Karma JS_ and _Jasmine_
