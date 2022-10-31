@@ -1,14 +1,14 @@
 {
-  "name": "example-web-component-greeter",
+  "name": "hello-message",
   "version": "1.0.0",
-  "description": "The example web component using vanilla JS.",
+  "description": "Most simple vanilla JS web component.",
   "scripts": {
     "karma": "karma start",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/bvfnbk/example-web-component-greeter.git"
+    "url": "git+ssh://git@github.com/bvfnbk/example-web-components.git"
   },
   "keywords": [
     "javascript",
@@ -18,9 +18,9 @@
   "author": "bvfnbk",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/bvfnbk/example-web-component-greeter/issues"
+    "url": "https://github.com/bvfnbk/example-web-components/issues"
   },
-  "homepage": "https://github.com/bvfnbk/example-web-component-greeter#readme",
+  "homepage": "https://github.com/bvfnbk/example-web-components#readme",
   "devDependencies": {
     "jasmine-core": "^4.3.0",
     "karma": "^6.4.0",
