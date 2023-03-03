@@ -10,3 +10,5 @@ _Angular_ and _VueJS_ to name but a few.
    - Basic setup.
    - Lifecycle: `attributeChangedCallback`
    - Tests with _Karma JS_ and _Jasmine_
+2. [TypeScript `<hello-message>` Greeter](./ts-hello-message/README.md) - the most simple web component; using
+    TypeScript (same features as the _JavaScript_ version).
