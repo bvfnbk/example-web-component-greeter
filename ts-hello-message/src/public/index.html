@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Example / Web Components / Greeter</title>
+  <script src="js/HelloMessage.js"></script>
+</head>
+<body>
+<label for="someInput">Message:</label>
+<input id="someInput" type="text"/> <br/>
+<hello-message id="greeter" name="Friend"></hello-message>
+<script>
+  const greeter = document.getElementById('greeter');
+  const inputElement = document.getElementById('someInput');
+
+  inputElement.addEventListener('input', (event) => {
+    greeter.setAttribute('name', event.target.value);
+  });
+</script>
+</body>
+</html>

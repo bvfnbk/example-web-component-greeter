@@ -1,0 +1,42 @@
+{
+  "name": "ts-hello-message",
+  "version": "1.0.0",
+  "description": "Most simple vanilla TS web component.",
+  "main": "index.js",
+  "scripts": {
+    "karma": "karma start",
+    "clean": "shx rm -rf dist",
+    "prepare": "shx mkdir -p dist",
+    "compile": "tsc",
+    "copy-assets": "shx cp src/public/index.html dist/",
+    "build": "npm-run-all prepare compile copy-assets",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/bvfnbk/example-web-components.git"
+  },
+  "keywords": [
+    "typescript",
+    "web",
+    "components"
+  ],
+  "author": "bvfnbk",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/bvfnbk/example-web-components/issues"
+  },
+  "homepage": "https://github.com/bvfnbk/example-web-components#readme",
+  "devDependencies": {
+    "@types/jasmine": "^4.3.1",
+    "jasmine-core": "^4.5.0",
+    "karma": "^6.4.1",
+    "karma-chrome-launcher": "^3.1.1",
+    "karma-firefox-launcher": "^2.1.2",
+    "karma-jasmine": "^5.1.0",
+    "karma-typescript": "^5.5.3",
+    "npm-run-all": "^4.1.5",
+    "shx": "^0.3.4",
+    "typescript": "^4.9.5"
+  }
+}
