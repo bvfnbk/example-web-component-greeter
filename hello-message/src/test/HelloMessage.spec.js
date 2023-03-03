@@ -24,9 +24,9 @@ describe('The <hello-message> element', () => {
   });
 
   it('should change the message when the "name" attribute is added.', function () {
-    const element = document.getElementById('custom');
+    const element = document.getElementById('default');
 
-    expect(element.shadowRoot.getElementById('wrapper').innerText).toBe('Hello Friend!');
+    expect(element.shadowRoot.getElementById('wrapper').innerText).toBe('Hello World!');
     element.setAttribute('name', 'Jasmine');
     expect(element.shadowRoot.getElementById('wrapper').innerText).toBe('Hello Jasmine!');
   });

@@ -1,4 +1,4 @@
-# example-web-component-greeter
+# `hello-message`
 
 ## Install Dependencies
 
