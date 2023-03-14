@@ -16,10 +16,12 @@ copied and adapted from earlier modules
 3. [Simple Event Handling](./input-element/README.md)
    - Custom event
    - Test with _Karma_ and _Jasmine_
+4. [Components as a Bundle](./components-as-bundle/README.md)
+   - Browser Bundle
+   - Test with _Karma_ and _Jasmine_
 
 ## Roadmap
 
-- Create a Bundle
 - Development Mode (watch sources, rebuild on change, reload modules)
 - Tagged Templates (building the template element...)
 
