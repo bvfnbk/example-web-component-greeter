@@ -8,8 +8,9 @@ https://bvfnbk.github.io/posts/example-web-components/components-as-bundle/
 
 This module has the following goals:
 
-- Convert the web components `src/ts/HelloMessage.ts` and `src/ts/MessageInput.ts` to a single file _JavaScript_ bundle.
-- Process `src/public/index.html` and update the `<script>` line to load the bundle.
+- Transpile all _TypeScript_ files (e.g. `src/ts/HelloMessage.ts` and `src/ts/MessageInput.ts`) to _JavaScript_ 
+- Create a bundle from all _JavaScript_ files.
+- Use the bundle in the `index.html` file.
 - The component tests should still work.
 
 ## Install Dependencies

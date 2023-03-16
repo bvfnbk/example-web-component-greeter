@@ -108,3 +108,10 @@ dist
 #
 *.iml
 .idea/
+
+
+
+##
+# Temporary Directory
+#
+tmp/
