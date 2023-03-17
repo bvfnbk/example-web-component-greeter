@@ -2,6 +2,8 @@
   "compilerOptions": {
     "module": "ES6",
     "target": "ES6",
+    "esModuleInterop": true,
+    "sourceMap": true,
     "alwaysStrict": true,
     "strictNullChecks": true,
     "noImplicitAny": true,
@@ -12,10 +14,9 @@
     "rootDir": "src/ts"
   },
   "include": [
-    "src/ts/**/*.ts",
-    "src/test/**/*.js"
+    "src/**/*"
   ],
   "exclude": [
     "node_modules"
-  ]
+  ],
 }

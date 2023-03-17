@@ -1,10 +1,19 @@
+import MessageInput from '../../ts/components/MessageInput';
+
 describe('The <message-input> element', () => {
     let element: HTMLElement;
+    let shadowRoot: ShadowRoot;
     let input: HTMLInputElement;
+
+    beforeAll(() => {
+        // Required for document.createElement() to return something...
+        customElements.define('message-input', MessageInput);
+    });
 
     beforeEach(() => {
         element = document.createElement('message-input');
-        input = element.shadowRoot.getElementById('someInput') as HTMLInputElement;
+        shadowRoot = element.shadowRoot!;
+        input = shadowRoot.getElementById('someInput')! as HTMLInputElement;
 
         document.body.append(element);
     });
@@ -30,9 +39,9 @@ describe('The <message-input> element', () => {
 
         // The event which will be emitted by the internal <input> element:
         const event = new Event('input');
-
         // The spy to be used to verify the call:
-        const stopPropagationSpy = spyOn(event, 'stopPropagation');
+        event.stopPropagation = jest.fn(() => {});
+
 
         // A flag documenting the event reception:
         let eventReceived = false;
@@ -50,8 +59,8 @@ describe('The <message-input> element', () => {
         input.dispatchEvent(event);
 
         // Then
-        expect(eventReceived).toBeTrue();
-        expect(stopPropagationSpy).toHaveBeenCalled();
+        expect(eventReceived).toBeTruthy();
+        expect(event.stopPropagation).toHaveBeenCalled();
     });
 
     it('should not emit an "input" event.', () => {
@@ -59,9 +68,9 @@ describe('The <message-input> element', () => {
 
         // The event which will be emitted by the internal <input> element:
         const event = new Event('input');
-
         // The spy to be used to verify the call:
-        const stopPropagationSpy = spyOn(event, 'stopPropagation');
+        event.stopPropagation = jest.fn(() => {});
+
 
         // A flag documenting the event reception:
         let eventReceived = false;
@@ -81,7 +90,7 @@ describe('The <message-input> element', () => {
         input.dispatchEvent(event);
 
         // Then
-        expect(eventReceived).toBeFalse();
-        expect(stopPropagationSpy).toHaveBeenCalled();
+        expect(eventReceived).toBeFalsy();
+        expect(event.stopPropagation).toHaveBeenCalled();
     });
 });

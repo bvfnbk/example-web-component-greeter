@@ -41,7 +41,7 @@ export default class HelloMessage extends HTMLElement {
 
     attributeChangedCallback(name: string, oldValue: string | null, newValue: string | null): void {
         if (name === 'name') {
-            this.wrapper.innerText = `Hello ${(newValue ? newValue : 'World')}!`;
+            this.wrapper.innerHTML = `Hello ${(newValue ? newValue : 'World')}!`;
         }
     }
 }

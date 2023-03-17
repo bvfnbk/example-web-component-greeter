@@ -15,10 +15,17 @@ This module has the following goals:
 
 ## Issues
 
-- Successfully created bundle with _Webpack_.
-- The `dist/` is now working thanks to the bundle.
+Creating the bundle in a way that the distribution works succeeded. It has been difficult to setup the tests
+using _Karma_ and _Jasmine_ though. However, switching to `jest`, `ts-jest` and `jsdom` it has been possible to enable
+the tests without too much change:
 
-&hellip; Karma still has problems running the tests.
+- `expect` defines slightly different assertions.
+- Mocking works differently.
+- The test environment for the browser (`jsdom`) is more picky about the `innerText` and `innerHTML` fields than common
+  browsers.
+
+_Jest_ runs the tests more quickly and has a better reporting (at least "on my machine") but unfortunately it does not
+_watch_ the tests by default. This may eventually be addressed when setting up the development service...
 
 ## Install Dependencies
 
@@ -55,7 +62,6 @@ to create a distribution in `dist/`
 Run
 
 ```shell
-npm run karma
+npm run test
 ```
 
-to start the _Karma JS_ test runner. The tests are run automatically whenever the specifications in `src/test/` change.

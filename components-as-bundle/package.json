@@ -4,13 +4,12 @@
   "description": "Distributing a browser bundle.",
   "private": true,
   "scripts": {
-    "karma": "karma start",
+    "test": "jest",
     "webpack": "webpack",
     "clean": "shx rm -rf dist",
     "prepare": "shx mkdir -p dist",
     "copy-assets": "shx cp src/public/index.html dist/",
-    "build": "npm-run-all prepare webpack copy-assets",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "npm-run-all prepare webpack copy-assets"
   },
   "repository": {
     "type": "git",
@@ -28,18 +27,17 @@
   },
   "homepage": "https://github.com/bvfnbk/example-web-components#readme",
   "devDependencies": {
-    "@types/jasmine": "^4.3.1",
-    "jasmine-core": "^4.5.0",
-    "karma": "^6.4.1",
-    "karma-chrome-launcher": "^3.1.1",
-    "karma-firefox-launcher": "^2.1.2",
-    "karma-jasmine": "^5.1.0",
-    "karma-typescript": "^5.5.3",
+    "@types/jest": "^29.5.0",
     "npm-run-all": "^4.1.5",
     "shx": "^0.3.4",
+    "ts-jest": "^29.0.5",
     "ts-loader": "^9.4.2",
     "typescript": "^4.9.5",
     "webpack": "^5.76.2",
     "webpack-cli": "^5.0.1"
+  },
+  "dependencies": {
+    "jest": "^29.5.0",
+    "jest-environment-jsdom": "^29.5.0"
   }
 }

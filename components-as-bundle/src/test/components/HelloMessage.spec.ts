@@ -1,19 +1,28 @@
+import HelloMessage from '../../ts/components/HelloMessage';
 
 describe('The <hello-message> element', () => {
     let defaultElement:HTMLElement;
     let defaultShadow: ShadowRoot;
+    let defaultWrapper: HTMLElement;
 
     let customElement: HTMLElement;
     let customShadow: ShadowRoot;
+    let customWrapper: HTMLElement;
+
+    beforeAll(() => {
+       customElements.define('hello-message', HelloMessage);
+    });
 
     beforeEach(() => {
         // Add elements to the DOM; the first w/o 'name', the second w/ 'name'
         defaultElement = document.createElement('hello-message');
-        defaultShadow = defaultElement.shadowRoot as ShadowRoot;
+        defaultShadow = defaultElement.shadowRoot!;
+        defaultWrapper = defaultShadow.getElementById('wrapper')!;
 
         customElement = document.createElement('hello-message');
         customElement.setAttribute('name', 'Friend');
-        customShadow = customElement.shadowRoot as ShadowRoot;
+        customShadow = customElement.shadowRoot!;
+        customWrapper = customShadow.getElementById('wrapper')!;
 
         document.body.append(
             defaultElement,
@@ -28,28 +37,28 @@ describe('The <hello-message> element', () => {
     });
 
     it('should contain the default message if the input element has no value set.', () => {
-        expect(defaultShadow.getElementById('wrapper').innerText).toBe('Hello World!');
+        expect(defaultWrapper.innerHTML).toBe('Hello World!');
     });
 
     it('should contain the message containing the value provided using the "name" attribute.', () => {
-        expect(customShadow.getElementById('wrapper').innerText).toBe('Hello Friend!');
+        expect(customWrapper.innerHTML).toBe('Hello Friend!');
     });
 
     it('should change the message when the "name" attribute is added.', () => {
-        expect(defaultShadow.getElementById('wrapper').innerText).toBe('Hello World!');
+        expect(defaultWrapper.innerHTML).toBe('Hello World!');
         defaultElement.setAttribute('name', 'Jasmine');
-        expect(defaultShadow.getElementById('wrapper').innerText).toBe('Hello Jasmine!');
+        expect(defaultWrapper.innerHTML).toBe('Hello Jasmine!');
     });
 
     it('should change the message when the "name" attribute is updated.', () => {
-        expect(customShadow.getElementById('wrapper').innerText).toBe('Hello Friend!');
+        expect(customWrapper.innerHTML).toBe('Hello Friend!');
         customElement.setAttribute('name', 'Jasmine');
-        expect(customShadow.getElementById('wrapper').innerText).toBe('Hello Jasmine!');
+        expect(customWrapper.innerHTML).toBe('Hello Jasmine!');
     });
 
     it('should change the message back to the default when the "name" attribute is removed.', () => {
-        expect(customShadow.getElementById('wrapper').innerText).toBe('Hello Friend!');
+        expect(customWrapper.innerHTML).toBe('Hello Friend!');
         customElement.removeAttribute('name');
-        expect(customShadow.getElementById('wrapper').innerText).toBe('Hello World!');
+        expect(customWrapper.innerHTML).toBe('Hello World!');
     });
 });

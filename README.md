@@ -18,7 +18,8 @@ copied and adapted from earlier modules
    - Test with _Karma_ and _Jasmine_
 4. [Components as a Bundle](./components-as-bundle/README.md)
    - Browser Bundle
-   - Test with _Karma_ and _Jasmine_
+   - ~~Test with _Karma_ and _Jasmine_~~
+   - Tests with _Jest_/_TS Jest_
 
 ## Roadmap
 
