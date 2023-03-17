@@ -9,7 +9,7 @@ span#wrapper {
 <span id="wrapper">Hello World!</span>
 `;
 
-class HelloMessage extends HTMLElement {
+export default class HelloMessage extends HTMLElement {
     static get observedAttributes(): string[] {
         return ['name'];
     }
@@ -45,7 +45,3 @@ class HelloMessage extends HTMLElement {
         }
     }
 }
-
-
-
-customElements.define('hello-message', HelloMessage);

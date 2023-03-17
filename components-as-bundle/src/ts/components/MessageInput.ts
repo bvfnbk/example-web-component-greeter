@@ -8,7 +8,7 @@ messageInputTemplate.innerHTML = `
 `;
 
 
-class MessageInput extends HTMLElement {
+export default class MessageInput extends HTMLElement {
     private shadow: ShadowRoot;
     private inputElement: HTMLInputElement;
     private readonly eventHandler: EventListener;
@@ -43,7 +43,3 @@ class MessageInput extends HTMLElement {
         this.inputElement.removeEventListener('input', this.eventHandler);
     }
 }
-
-
-
-customElements.define('message-input', MessageInput);

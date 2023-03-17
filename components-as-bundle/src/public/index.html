@@ -6,20 +6,11 @@
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Example / Web Components / Greeter</title>
-  <script src="js/components/HelloMessage.js"></script>
-  <script src="js/components/MessageInput.js"></script>
 </head>
 <body>
 <message-input id="msgInput"></message-input>
 <br/>
 <hello-message id="greeter" name="Friend"></hello-message>
-<script>
-  const greeter = document.getElementById('greeter');
-  const inputElement = document.getElementById('msgInput');
-
-  inputElement.addEventListener('MessageUpdateEvent', (event) => {
-    greeter.setAttribute('name', event.detail);
-  });
-</script>
+<script src="js/bundle.js" type="module"></script>
 </body>
 </html>
