@@ -2,6 +2,21 @@
   "name": "ts-hello-message",
   "version": "1.0.0",
   "description": "Most simple vanilla TS web component.",
+  "keywords": [
+    "typescript",
+    "web",
+    "components"
+  ],
+  "homepage": "https://github.com/bvfnbk/example-web-components#readme",
+  "bugs": {
+    "url": "https://github.com/bvfnbk/example-web-components/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/bvfnbk/example-web-components.git"
+  },
+  "license": "Apache-2.0",
+  "author": "bvfnbk",
   "main": "index.js",
   "scripts": {
     "karma": "karma start",
@@ -12,21 +27,6 @@
     "build": "npm-run-all prepare compile copy-assets",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com/bvfnbk/example-web-components.git"
-  },
-  "keywords": [
-    "typescript",
-    "web",
-    "components"
-  ],
-  "author": "bvfnbk",
-  "license": "Apache-2.0",
-  "bugs": {
-    "url": "https://github.com/bvfnbk/example-web-components/issues"
-  },
-  "homepage": "https://github.com/bvfnbk/example-web-components#readme",
   "devDependencies": {
     "@types/jasmine": "^4.3.1",
     "jasmine-core": "^4.5.0",
