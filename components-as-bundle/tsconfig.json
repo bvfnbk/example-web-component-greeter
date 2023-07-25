@@ -10,13 +10,12 @@
     "noImplicitReturns": true,
     "noImplicitThis": true,
     "removeComments": true,
-    "outDir": "dist/js",
-    "rootDir": "src/ts"
+    "outDir": "dist/js"
   },
   "include": [
     "src/**/*"
   ],
   "exclude": [
     "node_modules"
-  ],
+  ]
 }
